@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding-top: 50px;
+  padding-left: 40%;
+}
+
+.block {
+  width: 200px;
+  height: 200px;
+  background: #2e2c2a;
+}
+.block .item {
+  padding-left: 30%;
+  padding-top: 40%;
+}
+
+.item :hover :nth-child(2) {
+  transform: rotate(45deg);
+}
+
+.sword-block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.sword-block-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.sword-block-left {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.sword-block-left:active {
+  transform: rotate(-45deg) translate(16px, -45px);
+}
+
+.sword {
+  max-width: 50px;
+}
+.sword-1 {
+  background-color: white;
+  width: 10%;
+  height: 5px;
+}
+.sword-2 {
+  background: #000;
+  width: 10%;
+  height: 5px;
+}
+.sword-3 {
+  background-color: white;
+  width: 80%;
+  height: 5px;
+}
+
+.sword-1right {
+  background-color: white;
+  width: 80%;
+  height: 5px;
+}
+.sword-2right {
+  background: #000;
+  width: 10%;
+  height: 5px;
+}
+.sword-3right {
+  background-color: white;
+  width: 10%;
+  height: 5px;
+}
+
+.sword-1left {
+  background-color: white;
+  width: 10%;
+  height: 5px;
+}
+.sword-2left {
+  background: #000;
+  width: 10%;
+  height: 5px;
+}
+.sword-3left {
+  background-color: white;
+  width: 80%;
+  height: 5px;
+}
