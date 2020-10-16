@@ -1,98 +1,231 @@
 body {
-    margin: 0;
-    padding-top: 50px;
-    padding-left: 40%;
+  margin: 0;
+  padding-top: 50px;
+  padding-left: 40%;
 }
-
-$size: 20px;
 
 .block {
-    width: 200px;
-    height: 200px;
-    background: rgb(46, 44, 42);
-    .item {
-        padding-left: 30%;
-        padding-top: 40%;
-    }
+  width: 200px;
+  height: 200px;
+  background: rgb(46, 44, 42);
 }
 
-.item :hover :nth-child(2) {
-    transform: rotate(45deg);
+.item-sword {
+  padding-top: 80px;
+  padding-left: 40px;
 }
-
 .sword-block {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-bottom: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
 }
+
 .sword-block-right {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-bottom: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
 }
 .sword-block-left {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-bottom: 10px;
-    &:active {
-        transform: rotate(-45deg) translate(16px, -45px);
-    }
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.block:hover .sword-block {
+  animation: action_3 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
 
 .sword {
-    max-width: 50px;
-    &-1 {
-        background-color: white;
-        width: 10%;
-        height: 5px;
-    }
-    &-2 {
-        background: #000;
-        width: 10%;
-        height: 5px;
-    }
-    &-3 {
-        background-color: white;
-        width: 80%;
-        height: 5px;
-    }
+  max-width: 50px;
+  &-1 {
+    background-color: white;
+    width: 10px;
+    height: 5px;
+  }
+  &-2 {
+    background: #000;
+    width: 15px;
+    height: 5px;
+  }
+  &-3 {
+    background-color: white;
+    width: 80px;
+    height: 5px;
+  }
 }
 
 .sword {
-    &-1right {
-        background-color: white;
-        width: 80%;
-        height: 5px;
-    }
-    &-2right {
-        background: #000;
-        width: 10%;
-        height: 5px;
-    }
-    &-3right {
-        background-color: white;
-        width: 10%;
-        height: 5px;
-    }
+  &-1right {
+    background-color: white;
+    width: 80px;
+    height: 5px;
+  }
+  &-2right {
+    background: #000;
+    width: 15px;
+    height: 5px;
+  }
+  &-3right {
+    background-color: white;
+    width: 10px;
+    height: 5px;
+  }
 }
 
 .sword {
-    &-1left {
-        background-color: white;
-        width: 10%;
-        height: 5px;
-    }
-    &-2left {
-        background: #000;
-        width: 10%;
-        height: 5px;
-    }
-    &-3left {
-        background-color: white;
-        width: 80%;
-        height: 5px;
-    }
+  &-1left {
+    background-color: white;
+    width: 10px;
+    height: 5px;
+  }
+  &-2left {
+    background: #000;
+    width: 15px;
+    height: 5px;
+  }
+  &-3left {
+    background-color: white;
+    width: 80px;
+    height: 5px;
+  }
+}
+
+.block:hover .sword-block {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.block:hover .sword-block-right {
+  animation: action_1 2s;
+  animation-timing-function: cubic-bezier(0.84, -0.09, 0.3, 0.99);
+  animation-fill-mode: forwards;
+}
+.block:hover .item-sword .sword-block-left .sword-3left {
+  background-color: green;
+  box-shadow: 2px 1px 20px 5px rgba(34, 139, 0, 0.75);
+  border-radius: 30%;
+}
+
+.block:hover .sword-block-left {
+  animation: action_2 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.block:hover .item-sword .sword-block-right .sword-1right {
+  background-color: red;
+  box-shadow: 2px 1px 20px 5px rgba(253, 18, 18, 0.75);
+  border-radius: 30%;
+}
+
+@keyframes action_1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(50deg) translate(1px, 10px);
+  }
+}
+@keyframes action_2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-50deg) translate(35px, -35px);
+  }
+}
+
+@keyframes action_3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg) translate(1px, -20px);
+  }
+}
+
+.block-ball {
+  padding-top: 150px;
+  display: flex;
+}
+
+.ball-first,
+.ball-last,
+.ball {
+  background-color: brown;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: relative;
+  &::after {
+    position: absolute;
+    display: block;
+    content: " ";
+    width: 96%;
+    height: 10px;
+    left: 0px;
+    bottom: -20px;
+    border-radius: 50%;
+    opacity: 0.2;
+    background: rgb(56, 56, 56);
+  }
+}
+
+.ball-first {
+  animation: 1s ease-in alternate infinite ball-1;
+}
+
+@keyframes ball-1 {
+  0% {
+    transform: rotate(25deg) translate(-60px, 0px);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+.ball-last {
+  animation: 1s alternate infinite ball-2;
+}
+
+@keyframes ball-2 {
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-25deg) translate(60px, 0px);
+  }
+}
+
+.ball-first::after {
+  animation: 1s ease-in alternate infinite shadow-first;
+}
+
+@keyframes shadow-first {
+  0% {
+    transform: rotate(-25deg) translate(-50px, 0px);
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(0deg);
+    opacity: 0.2;
+  }
+}
+.ball-last::after {
+  animation: 1s ease-in-out alternate infinite shadow-last;
+}
+
+@keyframes shadow-last {
+  50% {
+    transform: rotate(0deg);
+    opacity: 0.2;
+  }
+  100% {
+    transform: rotate(25deg) translate(50px, 0px);
+    opacity: 0;
+  }
 }
